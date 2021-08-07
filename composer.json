@@ -1,0 +1,28 @@
+{
+    "name": "giovannedev/memed-php",
+    "description": "PHP Wrapper for Memed Digital Prescription API",
+    "keywords": [
+        "memed",
+        "prescription",
+        "digital signature"
+    ],
+    "homepage": "https://memed.com.br",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Giovanne Oliveira",
+            "email": "giovanne@giovanne.dev"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "guzzlehttp/guzzle": "^7.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Memed\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
