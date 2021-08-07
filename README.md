@@ -2,8 +2,6 @@
 
 [![Latest Version](https://img.shields.io/github/release/giovannedev/memed-php.svg?style=flat-square)](https://github.com/giovannedev/memed-phpe/releases)
 [![Build Status](https://img.shields.io/travis/giovannedev/memed-php/master.svg?style=flat-square)](https://travis-ci.org/giovannedev/memed-php)
-[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/giovannedev/memed-php.svg?style=flat-square)](https://scrutinizer-ci.com/g/giovannedev/memed-php)
-[![Quality Score](https://img.shields.io/scrutinizer/g/giovannedev/memed-php.svg?style=flat-square)](https://scrutinizer-ci.com/g/giovannedev/memed-php)
 [![Total Downloads](https://img.shields.io/packagist/dt/giovannedev/memed-php.svg?style=flat-square)](https://packagist.org/packages/giovannedev/memed-php)
 
 **Memed Digital Prescription PHP Wrapper**
