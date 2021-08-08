@@ -45,12 +45,21 @@ class DoctorToolkit{
     {
         $response = $this->http->_makeCall(Routes::getRoute('DOCTOR_RETRIEVE_TOKEN', $attribute));
 
+        if(isset($response['errors'])){
+            $r['status'] = $response['statusCode'];
+            $r['message'] = $response['errors'][0]['detail'];
+        }
         return $response['data']['attributes']['token'];
     }
 
     public function getDoctorInfo($attribute)
     {
         $response = $this->http->_makeCall(Routes::getRoute('DOCTOR_RETRIEVE_TOKEN', $attribute));
+
+        if(isset($response['errors'])){
+            $r['status'] = $response['statusCode'];
+            $r['message'] = $response['errors'][0]['detail'];
+        }
 
         return $response['data']['attributes'];
     }
