@@ -48,8 +48,10 @@ class DoctorToolkit{
         if(isset($response['errors'])){
             $r['status'] = $response['statusCode'];
             $r['message'] = $response['errors'][0]['detail'];
+            return $r;
+        }else{
+            return $response['data']['attributes']['token'];
         }
-        return $response['data']['attributes']['token'];
     }
 
     public function getDoctorInfo($attribute)
@@ -59,8 +61,10 @@ class DoctorToolkit{
         if(isset($response['errors'])){
             $r['status'] = $response['statusCode'];
             $r['message'] = $response['errors'][0]['detail'];
+            return $r;
+        }else{
+            return $response['data']['attributes'];
         }
 
-        return $response['data']['attributes'];
     }
 }
