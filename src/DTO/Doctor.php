@@ -18,8 +18,6 @@ class Doctor{
 
     public $email;
 
-    public $sexo;
-
     public $crm;
 
 

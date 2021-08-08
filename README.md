@@ -1,6 +1,6 @@
 # Package
 
-[![Latest Version](https://img.shields.io/github/release/giovannedev/memed-php.svg?style=flat-square)](https://github.com/giovannedev/memed-phpe/releases)
+[![Latest Version](https://img.shields.io/github/release/giovannedev/memed-php.svg?style=flat-square)](https://github.com/giovannedev/memed-php/releases)
 [![Build Status](https://img.shields.io/travis/giovannedev/memed-php/master.svg?style=flat-square)](https://travis-ci.org/giovannedev/memed-php)
 [![Total Downloads](https://img.shields.io/packagist/dt/giovannedev/memed-php.svg?style=flat-square)](https://packagist.org/packages/giovannedev/memed-php)
 
