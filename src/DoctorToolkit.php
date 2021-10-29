@@ -32,15 +32,16 @@ class DoctorToolkit{
 
         $response = $this->http->_makeCall(Routes::DOCTOR_SIGNUP, NULL, $payload, 'POST');
 
-        if($response['statusCode'] != 200 || $response['statusCode'] != 201){
+        if($response['statusCode'] == 200 || $response['statusCode'] == 201){
+            return $response['data']['attributes'];
+        }else{
             if($response['errors'][0]['code'] == 'Email'){
                 throw new Exception($response['errors'][0]['detail'], 701);
             }else{
+                var_dump($response);
                 throw new Exception($response['errors'][0]['detail'], 700);
             }
             return false;
-        }else{
-            return $response['data']['attributes'];
         }
 
     }
