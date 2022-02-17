@@ -51,7 +51,6 @@ class DoctorToolkit{
             if($response['errors'][0]['code'] == 'Email'){
                 throw new Exception($response['errors'][0]['detail'], 701);
             }else{
-                var_dump($response);
                 throw new Exception($response['errors'][0]['detail'], 700);
             }
             return false;
@@ -89,5 +88,9 @@ class DoctorToolkit{
     public function uploadPrescriptionPrintingSettings()
     {
         $payload = new Payload();
+        foreach($this->prescriptionPrintSettings as $k => $d){
+            $payload->set($k, $d);
+        }
+        return $this->http->_makeCall(Routes::DOCTOR_SIGNUP, NULL, $payload, 'POST', 'SettingsPayloadFormatter');
     }
 }
