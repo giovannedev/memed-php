@@ -91,6 +91,6 @@ class DoctorToolkit{
         foreach($this->prescriptionPrintSettings as $k => $d){
             $payload->set($k, $d);
         }
-        return $this->http->_makeCall(Routes::DOCTOR_SIGNUP, NULL, $payload, 'POST', 'SettingsPayloadFormatter');
+        return $this->http->_makeCall(Routes::DOCTOR_UPLOAD_PRINT_SETTINGS, NULL, $payload, 'POST', 'SettingsPayloadFormatter');
     }
 }
