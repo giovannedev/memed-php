@@ -18,7 +18,7 @@ class Client
     private $disableContentTypeHeader = false;
 
 
-    public function __construct($endpoint = 'https://sandbox.api.memed.com.br')
+    public function __construct($endpoint = 'https://integrations.api.memed.com.br')
     {
         $this->apiEndpoint = $endpoint;
     }
