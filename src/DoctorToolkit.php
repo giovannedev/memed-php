@@ -11,6 +11,19 @@ use Exception;
 class DoctorToolkit{
 
     private $http;
+    private $prescriptionPrintSettings = [
+        "indice"                                => 1,
+        "ativo"                                 => true,
+        "type"                                  => "configuracoes-cabecalho-rodape",
+        "mostrar_label_nome_paciente"           => true,
+        "mostrar_data"                          => 1,
+        "mostrar_cabecalho_rodape_simples"      => 1,
+        "mostrar_unidades"                      => true,
+        "mostrar_nome_fabricante"               => true,
+        "mostrar_label_paciente_especial"       => 1,
+        "mostrar_unidades_especial"             => true,
+        "mostrar_cabecalho_rodape_especial"     => 1,
+    ];
 
     public function __construct(Client $client)
     {
@@ -71,5 +84,10 @@ class DoctorToolkit{
             return $response['data']['attributes'];
         }
 
+    }
+
+    public function uploadPrescriptionPrintingSettings()
+    {
+        $payload = new Payload();
     }
 }

@@ -7,6 +7,8 @@ use GuzzleHttp\Psr7\Request;
 use Memed\DTO\Doctor;
 use Memed\HTTP\Payload;
 use Memed\Formatters;
+use Memed\Formatters\UserPayloadFormatter;
+use Memed\Formatters\SettingsPayloadFormatter;
 
 class Client
 {
@@ -58,7 +60,7 @@ class Client
         return $headers;
     }
 
-    public function _makeCall($path = '', array $queryString = NULL, Payload $payload = NULL, $method = 'GET')
+    public function _makeCall($path = '', array $queryString = NULL, Payload $payload = NULL, $method = 'GET', $formatter = 'UserPayloadFormatter')
     {
 
         $this->_validateRequisites();
@@ -80,7 +82,15 @@ class Client
         }
 
         if($payload <> NULL){
-            $requestPayload['body'] = json_encode(Formatters\UserPayloadFormatter::format($payload));
+            switch($formatter){
+                case 'UserPayloadFormatter':
+                default:
+                    $requestPayload['json'] = UserPayloadFormatter::format($payload);
+                    break;
+                case 'SettingsPayloadFormatter':
+                    $requestPayload['json'] = SettingsPayloadFormatter::format($payload);
+                    break;
+            }
         }
 
         $response = $client->request($method, $path . '?api-key=' . $this->apiKey . '&secret-key=' . $this->apiSecret, $requestPayload);
